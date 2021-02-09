@@ -1,3 +1,4 @@
+// 1024
 #include <stdio.h>
 
 int main(void){
