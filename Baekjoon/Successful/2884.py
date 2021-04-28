@@ -1,4 +1,7 @@
-h, m = map(int, input().split())
+# h, m = map(int, input().split())
+h, m = input().split()
+h = int(h)
+m = int(m)
 
 if m >= 45:
     m -= 45
