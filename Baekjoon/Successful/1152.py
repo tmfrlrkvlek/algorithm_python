@@ -1,3 +1,5 @@
+#1152
+
 words = 1
 line = input()
 for i in line:
