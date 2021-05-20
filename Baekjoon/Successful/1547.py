@@ -34,3 +34,19 @@ print(loc[0])
 #     loc[xidx] = y
 #     loc[yidx] = x
 # print(loc[0])
+
+# 210520 찬희님 코드
+
+# M=int(input())
+# L=[0,1,2,3]
+
+# for i in range(M):
+#     X,Y=input().split()
+#     X=int(X)
+#     Y=int(Y)
+
+#     L[0]=L[X]
+#     L[X]=L[Y]
+#     L[Y]=L[0]
+    
+# print(L)
