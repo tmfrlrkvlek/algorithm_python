@@ -17,3 +17,4 @@ else :
 	resfunc(9, 0, res)
 	res.sort()
 	print(res[n+1])
+
