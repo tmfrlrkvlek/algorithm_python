@@ -1,4 +1,4 @@
-def bfs(graog, start_node) :
+def bfs(graph, start_node) :
 	visit = list()
 	queue = list()
 
@@ -11,6 +11,3 @@ def bfs(graog, start_node) :
 			queue.extend(graph[node])
 
 	return
-
-
-
