@@ -52,17 +52,3 @@ for _ in 0..<n {
     let person2 = Location(x: data[3], y: data[4], distance: data[5])
     print(person1.meetCount(with: person2))
 }
-
-//func multiple(from: Double, to: Double) -> Double {
-//    if to == from { return to }
-//    else { return from * multiple(from: from - 1, to: to) }
-//}
-//
-//for _ in 0..<n {
-//    let sides: [String] = (readLine() ?? "0 0").components(separatedBy: " ")
-//    let left = Double(sides[0]) ?? 0
-//    let right = Double(sides[1]) ?? 0
-//    let count = left > right ? 0 : multiple(from: right, to: right - left + 1) / multiple(from: left, to: 1)
-//    print(Int(count))
-//}
-
