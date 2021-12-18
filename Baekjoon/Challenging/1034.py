@@ -1,36 +1,31 @@
 # 1034
-import copy
-from itertools import combinations_with_replacement
+import sys
+input = sys.stdin.readline
 
-# 입력
+def getNum(line) :
+	return int("0b" + "".join(line), 2)
+
+def orders(lines) :
+	order = {}	
+	for line in lines :
+		num = getNum(line) 
+		if num in order : order[num] = (order[num][0]+1, line)
+		else : order[num] = (1, line)
+	return order
+
+def isAvailable(line, isEnum) :
+	count = line.count("0")
+	return count <= k and count % 2 == isEnum 
+
+def maxLineCount(orders) :
+	for _, order in sorted(orders.items(), key=lambda item: item[1][0], reverse=True):
+		if isAvailable(order[1], k % 2) : return order[0]
+	return 0
+
 n, m = map(int, input().split())
-lamps = [] 
-bingo = 0
-for i in range(n):
-	lamps.append(list(map(int, input())))
-	if i not in lamps[i]:
-		bingo += 1
+lines = [list(input().rstrip()) for _ in range(n)]
 k = int(input())
+print(maxLineCount(orders(lines)))
 
-# 결과
-def checkBingo(lists):
-	global n
-	bingo = 0
-	for i in range(n):
-		if 0 not in lists[i]: bingo += 1
-	return bingo
 
-def turnLamps(lists, cwr):
-	global k
-	i = 0
-	while(i != k):
-		ii = cwr[i]
-		if cwr.count(ii) % 2 :
-			for j in range(n) : lists[j][ii] = 0 if lists[j][ii] else 1
-		i += (cwr.count(ii))
-	return checkBingo(lists)
 
-bingoList = []
-for cwr in combinations_with_replacement(list(range(m)), k):
-	bingoList.append(turnLamps(copy.deepcopy(lamps), cwr))
-print(max(bingoList))
