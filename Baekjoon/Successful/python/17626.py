@@ -1,4 +1,4 @@
-# 17676
+# 17626
 import sys
 def check(n) :
     if (n**0.5).is_integer() : return 1
@@ -12,10 +12,10 @@ def check(n) :
 n = int(sys.stdin.readline())
 print(check(n))
 
-## dp 사용
+## dp 사용 _ fail
 import sys
 n = int(sys.stdin.readline())
 r = [0, 1]
 for i in range(2, n+1) :
-    r.append(min([r[i-(j**2)]+1 for j in range(int(i**0.5//2)+1, int(i**0.5)+1)]))
+    r.append(min([r[i-(j**2)]+1 for j in range(1, int(i**0.5)+1)]))
 print(r[n])
