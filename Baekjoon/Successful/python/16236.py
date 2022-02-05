@@ -5,12 +5,12 @@ input = sys.stdin.readline
 babyshark = 2
 n = int(input().strip())
 space = []
-babyShartPos = (0, 0)
+babySharkPos = (0, 0)
 for x in range(n) :
     space.append(list(map(int, input().strip().split())))
     for y, f in enumerate(space[-1]) : 
         if f == 9 : 
-            babyShartPos = (x, y)
+            babySharkPos = (x, y)
             space[-1][y] = 0
 
 def distance(start):
@@ -33,15 +33,15 @@ def distance(start):
 time = 0
 fishCount = 0
 while True :
-    result = distance(babyShartPos)
+    result = distance(babySharkPos)
     if result[0][0] < 0 : break
     time += result[1]
-    babyShartPos = result[0]
+    babySharkPos = result[0]
     fishCount += 1
     if fishCount == babyshark :
         babyshark += 1
         fishCount = 0
-    space[babyShartPos[0]][babyShartPos[1]] = 0
+    space[babySharkPos[0]][babySharkPos[1]] = 0
 print(time)
 
 
