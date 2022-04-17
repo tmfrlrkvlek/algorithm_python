@@ -1,0 +1,2 @@
+def solution(n, arr1, arr2):
+    return ["".join([" " if c1 == c2 == "0" else "#" for c1, c2 in zip(("{0:0"+f"{n}" +"b}").format(num1), ("{0:0"+f"{n}" +"b}").format(num2))]) for num1, num2 in zip(arr1, arr2)]
