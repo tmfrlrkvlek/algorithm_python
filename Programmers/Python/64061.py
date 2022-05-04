@@ -13,3 +13,27 @@ def solution(board, moves):
                 stack.append(doll)
     return result
 
+def solution2(board, moves):
+    c = [0] * len(board)
+    stack = []
+    for row in moves :
+        col = c[row-1]
+        while col < len(board) and board[col][row-1] == 0 :
+            col += 1
+        c[row-1] = col
+        if col == len(board) : 
+            continue
+        else :
+            stack.append(board[col][row-1])
+            board[col][row-1] = 0
+    idx = 1
+    cnt = 0
+    while idx < len(stack) :
+        if idx == 0 :
+            idx += 1
+        elif stack[idx] == stack[idx-1] :
+            del stack[idx]; del stack[idx-1]
+            cnt += 2; idx -= 1
+        else :
+            idx += 1
+    return cnt
