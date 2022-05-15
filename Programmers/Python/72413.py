@@ -25,3 +25,5 @@ def dijkstra(graph, n, s) :
             fare[d] = fee+cost
             heapq.heappush(queue, (fee+cost, d))
     return fare
+
+
